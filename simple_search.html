@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>List</title>
+    <title>Search</title>
 </head>
 <body>
+<form method="POST">
+    <div>
+        Car name:<input type="text" name="name"><br><br>
+    </div>
+    <div><input type="submit" value="Search"></div>
+</form>
+Result:<br>
 {{range .}}
     <br>
     Car name:{{.Name}}<br>

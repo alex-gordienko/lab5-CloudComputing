@@ -16,14 +16,14 @@ func rollHandler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		books, err := dbGetBooks()
+		books, err := dbGetCars()
 		if err != nil {
 			log.Fatal(err)
 		}
 		t.Execute(w, books)
 	}
 }
-func addBookHandler(w http.ResponseWriter, r *http.Request) {
+func addAutoHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		t, err := template.ParseFiles("simple_form.html")
 		if err != nil {
@@ -33,12 +33,32 @@ func addBookHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		r.ParseForm()
 		name := r.Form.Get("name")
+		country := r.Form.Get("country")
 		year := r.Form.Get("year")
-		length := r.Form.Get("length")
-		err := dbAddBook(name, year, length)
+		price := r.Form.Get("price")
+		err := dbAddCar(name, country, year, price)
 		if err != nil {
 			log.Fatal(err)
 		}
+	}
+}
+
+func searchAutoHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
+		t, err := template.ParseFiles("simple_search.html")
+		if err != nil {
+			log.Fatal(err)
+		}
+		t.Execute(w, nil)
+	} else {
+		t, err := template.ParseFiles("simple_search.html")
+		r.ParseForm()
+		name := r.Form.Get("name")
+		cars, err := dbSearchCar(name)
+		if err != nil {
+			log.Fatal(err)
+		}
+		t.Execute(w, cars)
 	}
 }
 func GetPort() string {
@@ -55,6 +75,7 @@ func main() {
 		log.Fatal(err)
 	}
 	http.HandleFunc("/", rollHandler)
-	http.HandleFunc("/add", addBookHandler)
+	http.HandleFunc("/add", addAutoHandler)
+	http.HandleFunc("/search", searchAutoHandler)
 	log.Fatal(http.ListenAndServe(GetPort(), nil))
 }

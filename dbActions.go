@@ -4,10 +4,11 @@ import (
 	"fmt"
 	_ "github.com/lib/pq"
 )
-type Book struct{
+type Car struct{
 	Name string
+	Prod string
+	Price string
 	Year string
-	Length string
 }
 const (
 	DB_USER = "postgres"
@@ -21,37 +22,58 @@ func dbConnect() error {
 	if err != nil {
 		return err
 	}
-	if _, err := db.Exec("CREATE TABLE IF NOT EXISTS books (book_name text,book_year text,book_length text)");
+	if _, err := db.Exec("CREATE TABLE IF NOT EXISTS auto (auto_name text, auto_prodCountry text, auto_price text, auto_prodYear text)");
 	err != nil {
 	return err
 }
 return nil
 }
-func dbAddBook(name, year, length string) error {
-	sqlstmt := "INSERT INTO books VALUES ($1, $2, $3)"
-	_, err := db.Exec(sqlstmt, name, year, length)
+func dbAddCar(name, country, year, price string) error {
+	sqlstmt := "INSERT INTO auto VALUES ($1, $2, $3, $4)"
+	_, err := db.Exec(sqlstmt, name, country, price, year)
 	if err != nil {
 		return err
 	}
 	return nil
 }
-func dbGetBooks() ([]Book, error) {
-	var books []Book
-	stmt, err := db.Prepare("SELECT book_name, book_year, book_length FROM books")
+func dbGetCars() ([]Car, error) {
+	var cars []Car
+	stmt, err := db.Prepare("SELECT auto_name, auto_prodCountry, auto_price, auto_prodYear FROM auto")
 	if err != nil {
-		return books, err
+		return cars, err
 	}
 	res, err := stmt.Query()
 	if err != nil {
-		return books, err
+		return cars, err
 	}
-	var tempBook Book
+	var tempCar Car
 	for res.Next() {
-		err = res.Scan(&tempBook.Name, &tempBook.Year, &tempBook.Length)
+		err = res.Scan(&tempCar.Name, &tempCar.Prod, &tempCar.Price, &tempCar.Year)
 		if err != nil {
-			return books, err
+			return cars, err
 		}
-		books = append(books, tempBook)
+		cars = append(cars, tempCar)
 	}
-	return books, err
+	return cars, err
+}
+
+func dbSearchCar(name string) ([]Car, error) {
+	var cars []Car
+	stmt, err := db.Prepare(fmt.Sprintf("SELECT auto_name, auto_prodCountry, auto_price, auto_prodYear FROM auto WHERE auto_name='%s'", name))
+	if err != nil {
+		return cars, err
+	}
+	res, err := stmt.Query()
+	if err != nil {
+		return cars, err
+	}
+	var tempCar Car
+	for res.Next() {
+		err = res.Scan(&tempCar.Name, &tempCar.Prod, &tempCar.Price, &tempCar.Year)
+		if err != nil {
+			return cars, err
+		}
+		cars = append(cars, tempCar)
+	}
+	return cars, err
 }
