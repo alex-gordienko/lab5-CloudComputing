@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e1eff5a3-667c-497d-a3d6-666db482185e" name="Default Changelist" comment="" />
+    <list default="true" id="e1eff5a3-667c-497d-a3d6-666db482185e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +19,9 @@
     </option>
   </component>
   <component name="GOROOT" path="C:\Users\alexo\sdk\go1.15.5" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1kjjgHEn0yDg6GzKq0MKOoyA9p2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,6 +36,7 @@
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
@@ -76,22 +83,22 @@
       <screen x="-497" y="-1024" width="1280" height="984" />
     </state>
     <state x="-39" y="-650" key="FileChooserDialogImpl/0.40.1366.728/-497.-1024.1280.984@-497.-1024.1280.984" timestamp="1606298067503" />
-    <state width="617" height="263" key="GridCell.Tab.0.bottom" timestamp="1606320617093">
+    <state width="617" height="263" key="GridCell.Tab.0.bottom" timestamp="1606324885381">
       <screen x="-497" y="-1024" width="1280" height="984" />
     </state>
-    <state width="617" height="263" key="GridCell.Tab.0.bottom/0.40.1366.728/-497.-1024.1280.984@-497.-1024.1280.984" timestamp="1606320617093" />
-    <state width="617" height="263" key="GridCell.Tab.0.center" timestamp="1606320617092">
+    <state width="617" height="263" key="GridCell.Tab.0.bottom/0.40.1366.728/-497.-1024.1280.984@-497.-1024.1280.984" timestamp="1606324885381" />
+    <state width="617" height="263" key="GridCell.Tab.0.center" timestamp="1606324885380">
       <screen x="-497" y="-1024" width="1280" height="984" />
     </state>
-    <state width="617" height="263" key="GridCell.Tab.0.center/0.40.1366.728/-497.-1024.1280.984@-497.-1024.1280.984" timestamp="1606320617092" />
-    <state width="617" height="263" key="GridCell.Tab.0.left" timestamp="1606320617092">
+    <state width="617" height="263" key="GridCell.Tab.0.center/0.40.1366.728/-497.-1024.1280.984@-497.-1024.1280.984" timestamp="1606324885380" />
+    <state width="617" height="263" key="GridCell.Tab.0.left" timestamp="1606324885380">
       <screen x="-497" y="-1024" width="1280" height="984" />
     </state>
-    <state width="617" height="263" key="GridCell.Tab.0.left/0.40.1366.728/-497.-1024.1280.984@-497.-1024.1280.984" timestamp="1606320617092" />
-    <state width="617" height="263" key="GridCell.Tab.0.right" timestamp="1606320617093">
+    <state width="617" height="263" key="GridCell.Tab.0.left/0.40.1366.728/-497.-1024.1280.984@-497.-1024.1280.984" timestamp="1606324885380" />
+    <state width="617" height="263" key="GridCell.Tab.0.right" timestamp="1606324885381">
       <screen x="-497" y="-1024" width="1280" height="984" />
     </state>
-    <state width="617" height="263" key="GridCell.Tab.0.right/0.40.1366.728/-497.-1024.1280.984@-497.-1024.1280.984" timestamp="1606320617093" />
+    <state width="617" height="263" key="GridCell.Tab.0.right/0.40.1366.728/-497.-1024.1280.984@-497.-1024.1280.984" timestamp="1606324885381" />
     <state x="-253" y="-938" key="SettingsEditor" timestamp="1606321298486">
       <screen x="-497" y="-1024" width="1280" height="984" />
     </state>
